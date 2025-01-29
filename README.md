@@ -167,7 +167,152 @@ The implementation of this project MUST be in the form of a REST, gRPC, or Graph
 
 ## **🧪** API Installation
 
-> Write how to run your service in local or development environment here. If you use Docker to serve your DBMS or your server, you will receive bonus points for your submission.
+Laravel Project
+This is a Laravel-based application. Follow the steps below to get started.
+
+Prerequisites
+Before you begin, ensure that you have the following installed:
+
+PHP (recommended version 8.0 or higher)
+Composer
+MySQL
+Laravel (you will install it via Composer)
+Node.js (for managing front-end assets)
+Step 1: Clone the repository
+Clone the repository to your local machine:
+
+bash
+Salin
+Edit
+git clone https://github.com/yourusername/your-laravel-project.git
+Navigate to the project folder:
+
+bash
+Salin
+Edit
+cd your-laravel-project
+Step 2: Install Dependencies
+Run the following command to install all required PHP dependencies via Composer:
+
+bash
+Salin
+Edit
+composer install
+This will install all the necessary packages defined in the composer.json file.
+
+If you need front-end dependencies (for assets like JavaScript and CSS), you can install them using:
+
+bash
+Salin
+Edit
+npm install
+Step 3: Set Up the Environment
+Laravel uses environment variables stored in the .env file. To configure your environment:
+
+Copy the .env.example file to a new .env file:
+
+bash
+Salin
+Edit
+cp .env.example .env
+Open .env and set the appropriate database connection and other environment settings:
+
+ini
+Salin
+Edit
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=your_database_name
+DB_USERNAME=your_database_username
+DB_PASSWORD=your_database_password
+Make sure that your MySQL server is running, and the database is set up.
+
+Step 4: Generate Application Key
+Run the following Artisan command to generate a new application key. This key is used to encrypt user sessions and other encrypted data.
+
+bash
+Salin
+Edit
+php artisan key:generate
+Step 5: Run Migrations
+Run the database migrations to create the necessary tables:
+
+bash
+Salin
+Edit
+php artisan migrate
+If you have seeders set up, you can populate your database with sample data by running:
+
+bash
+Salin
+Edit
+php artisan db:seed
+Step 6: Start the Local Development Server
+Laravel comes with a built-in development server. To start it, run the following command:
+
+bash
+Salin
+Edit
+php artisan serve
+By default, the application will be accessible at http://localhost:8000.
+
+Step 7: Access the Application
+Open a web browser and go to the following URL to access the Laravel app:
+
+arduino
+Salin
+Edit
+http://localhost:8000
+Step 8: Set Up Front-End Assets (Optional)
+If you are using front-end assets such as CSS and JavaScript compiled via Laravel Mix, you can run:
+
+bash
+Salin
+Edit
+npm run dev   # For development build
+npm run prod  # For production build
+This will compile your assets and place them in the public folder for use in the application.
+
+Additional Notes
+Authentication: If your app requires user authentication (e.g., using Laravel Sanctum for API authentication), make sure to configure it properly in the .env file and follow the setup steps in the Laravel documentation.
+
+Testing: If you want to run tests for your application, Laravel provides a robust testing suite. You can run the tests using the following command:
+
+bash
+Salin
+Edit
+php artisan test
+Directory Structure
+Here’s a brief overview of some key directories and files in a typical Laravel project:
+
+app/: Contains the core application code such as controllers, models, and services.
+config/: Contains configuration files for the application.
+database/: Contains migrations, seeders, and factories for database interaction.
+public/: Contains the front-end assets (CSS, JS) and the index.php file which serves as the entry point for the app.
+resources/: Contains views, language files, and raw assets.
+routes/: Contains route definitions (e.g., web.php, api.php).
+storage/: Used for caching, logs, and file storage.
+tests/: Contains test files for your application.
+.env: Stores environment-specific variables.
+Troubleshooting
+Error: Class 'Role' not found
+Ensure you’ve installed the spatie/laravel-permission package and run the necessary migrations. Run:
+
+bash
+Salin
+Edit
+composer require spatie/laravel-permission
+php artisan migrate
+Error: permission does not exist
+If you're getting permission-related issues, make sure you’ve run the RoleSeeder or DatabaseSeeder to create the roles.
+
+Error: composer command not found
+If Composer is not installed, follow the instructions on Composer's website.
+
+This README covers the essential setup process to get your Laravel application running. If you have any further issues, check the Laravel documentation for more details.
+
+Happy coding!
 
 ## **📞** Contact
 
